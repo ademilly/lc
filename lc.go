@@ -17,6 +17,19 @@ func usage() {
 	fmt.Println("Usage: lc some_file")
 }
 
+func source(arg string) io.Reader {
+	switch arg {
+	case "-":
+		return os.Stdin
+	default:
+		f, err := os.Open(os.Args[1])
+		if err != nil {
+			log.Fatalln(err)
+		}
+		return f
+	}
+}
+
 // countLines scan r io.Reader and count number of lines in r
 // returns number of lines in r as an int
 func countLines(r io.Reader) int {
@@ -38,10 +51,5 @@ func main() {
 		return
 	}
 
-	f, err := os.Open(os.Args[1])
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	fmt.Print(countLines(f))
+	fmt.Printf("%v\n", countLines(source(os.Args[1])))
 }
