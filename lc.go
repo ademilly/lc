@@ -12,10 +12,13 @@ import (
 	"os"
 )
 
+// usage print usage string to standard output
 func usage() {
 	fmt.Println("Usage: lc some_file")
 }
 
+// countLines scan r io.Reader and count number of lines in r
+// returns number of lines in r as an int
 func countLines(r io.Reader) int {
 	n := 0
 
@@ -27,6 +30,7 @@ func countLines(r io.Reader) int {
 	return n
 }
 
+// main checks command line arguments and compute line count from them
 func main() {
 
 	if len(os.Args) < 2 {
