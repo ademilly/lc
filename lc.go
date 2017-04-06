@@ -23,7 +23,7 @@ func source(arg string) io.Reader {
 	case "-":
 		return os.Stdin
 	default:
-		f, err := os.Open(os.Args[1])
+		f, err := os.Open(arg)
 		if err != nil {
 			log.Fatalln(err)
 		}
