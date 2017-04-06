@@ -56,7 +56,6 @@ func main() {
 	acc := make([]chan int64, 0)
 
 	for i, arg := range os.Args[1:] {
-
 		acc = append(acc, make(chan int64))
 		go countLines(source(arg), acc[i])
 	}
