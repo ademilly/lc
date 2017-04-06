@@ -6,7 +6,7 @@ lc - line counter command line utilitary
 
 If you have go (golang.org) on your system:
 ```
-    $ go get https://github.com/ademilly/lc
+    $ go get github.com/ademilly/lc
 ```
 
 Else... yeah no, I'm not bothering serving up binaries for every arch :D
