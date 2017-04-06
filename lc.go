@@ -17,6 +17,7 @@ func usage() {
 	fmt.Println("Usage: lc some_file")
 }
 
+// source return the source for countLines depending on os.Args[1] value
 func source(arg string) io.Reader {
 	switch arg {
 	case "-":
