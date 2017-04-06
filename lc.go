@@ -52,5 +52,9 @@ func main() {
 		return
 	}
 
-	fmt.Printf("%v\n", countLines(source(os.Args[1])))
+	acc := 0
+	for _, arg := range os.Args[1:] {
+		acc += countLines(source(arg))
+	}
+	fmt.Printf("%v\n", acc)
 }
