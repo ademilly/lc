@@ -33,8 +33,8 @@ func source(arg string) io.Reader {
 
 // countLines scan r io.Reader and count number of lines in r
 // returns number of lines in r as an int
-func countLines(r io.Reader) int {
-	n := 0
+func countLines(r io.Reader) int64 {
+	n := int64(0)
 
 	scanner := bufio.NewScanner(r)
 	for scanner.Scan() {
@@ -52,7 +52,7 @@ func main() {
 		return
 	}
 
-	acc := 0
+	acc := int64(0)
 	for _, arg := range os.Args[1:] {
 		acc += countLines(source(arg))
 	}
