@@ -23,6 +23,9 @@ If given multiple files, will return the aggregated count of lines.
     Output: line count
     $ cat /path/to/some/file /path/to/some/other/file
     Output: some file line count + some other file line count
+    $ lc -d /path/to/some/file
+    Output: count   file
+    count
 ```
 
 ## Next steps
